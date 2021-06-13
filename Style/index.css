@@ -1,1 +1,313 @@
 
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor{
+	border: solid 1px black;
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+.cabecera{
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	height: 100px;
+}
+
+.cabecera figure{
+	width: 130px;
+	margin: auto;
+}
+.cabecera img{
+	width:100px;
+}
+
+.cabecera__h1{
+	/*
+	position: absolute;
+	top: 40px;
+	left: 150px;
+	*/
+}
+
+.cabecera__frase{
+	/*
+	position: absolute;
+	top: 70px;
+	left: 235px;*/
+}
+
+.nav{
+	position: absolute;
+	top: 100px;
+	right: -200px;
+	width: 200px;
+	z-index: 1;
+	background: rgba(0,0,0,.5);
+	height: 100vh;
+	transition: transform .3s ease-out;
+	will-change: transition;
+}
+
+.nav--move{
+	transform: translateX(-100%);
+}
+
+.nav__link{
+	display: block;
+	color: white;
+	text-decoration: none;
+	line-height: 40px;
+	text-indent: 10px;
+}
+
+.nav__link:last-child{
+	text-indent: 5px;
+}
+
+/********************************************************/
+/********************************************************/
+.galeria{
+	width: 100%;
+	height: 400px;
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.galeria__lienzo{
+	width: 600px;
+	height: 350px;
+	background: white;
+	overflow: hidden;
+}
+
+.galeria__contenedor{
+	display: flex;
+	background: red;
+	width: 6000px;
+	height: 350px;
+	transition:transform 1s ease-in;
+	will-change: transform;
+}
+
+.rbt1:checked ~ .galeria__contenedor{
+
+	transform: translateX(0px);
+
+}
+
+.rbt2:checked ~ .galeria__contenedor{
+
+	transform: translateX(-600px);
+
+}
+
+.rbt3:checked ~ .galeria__contenedor{
+
+	transform: translateX(-1200px);
+
+}
+
+.rbt4:checked ~ .galeria__contenedor{
+
+	transform: translateX(-1800px);
+
+}
+
+.rbt5:checked ~ .galeria__contenedor{
+
+	transform: translateX(-2400px);
+
+}
+
+.rbt{
+	display: none;
+}
+
+.controles{
+	width: 100%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: -26px;
+}
+
+label{
+	margin: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+	background: green;
+	display: block;
+	cursor: pointer;
+}
+
+
+/********************************************************/
+/********************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tienda{
+	display: grid;
+
+	/*grid-template: repeat(3, 300px) / repeat(3, 300px) ;*/
+	grid-template: repeat(3, 300px) / 300px ;
+	justify-content: center;
+	grid-gap: 16px;
+	width: 100%;
+	height: auto;
+
+
+}
+
+.tienda article{
+	display: flex;
+
+	justify-content: center;
+	align-content: space-between;
+	flex-flow: wrap;
+	border: solid;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.tienda img {
+	position: relative;
+	top: 5px;
+	width: 150px;
+	height: 100px;
+}
+
+.tienda div{
+
+	width: 100%;
+	height: 50px;
+	background: red;
+}
+
+.tienda p{
+	text-align: center;
+}
+
+.diez{
+	position: relative;
+	top:15px;
+	right:5px;
+	width: 100%;
+	text-align: right !important;
+
+}
+
+.dos{
+	top: 100px;
+}
+
+.oferton__img{
+
+	width: 400px !important;
+	height: 200px !important;
+}
+
+
+.iconMenu{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	font-size: 30px;
+	color: #333;
+}
+
+
+
+@media screen and (min-width: 600px){
+	.tienda{
+		grid-template: repeat(3, 300px) / repeat(2, 300px) ;
+	}
+}
+
+@media screen and (min-width: 800px){
+
+	.cabecera figure, .cabecera img{
+		width:300px;
+	}
+
+	.cabecera__h1{
+		position: absolute;
+		top: 40px;
+		left: 150px;
+	}
+
+	.cabecera__frase{
+		position: absolute;
+		top: 75px;
+		left: 235px;
+	}
+
+	.nav{
+		display: block;
+	}
+
+	.iconMenu{
+		display: none;
+	}
+
+	.nav{
+		margin: 10px 10px 0 0;
+		position: unset;
+		background: none;
+		height: auto;
+		width: unset;
+		border:none;
+	}
+
+	.nav__link{
+		text-decoration: none;
+		color: #333;
+		display: inline-block;
+	}
+
+	.nav__link--palote:before{
+		content: "| "
+	}
+
+	.nav__link--button{
+		background: #008B99;
+		color: white;
+		padding: 5px;
+		border-radius: 3px; 
+	}
+}
+
+@media screen and (min-width: 1024px){
+	.tienda{	
+		grid-template: repeat(3, 300px) / repeat(3, 300px) ;
+	}
+
+	.oferton{
+		grid-column:1/3;
+		grid-row: 2/4; 
+	}
+
+}
